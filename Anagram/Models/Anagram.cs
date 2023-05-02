@@ -33,23 +33,10 @@ namespace Anagram.Models
 
     public bool CheckPalindrome(string word)
     {
-      string wordString = word;
-      char[] charArray1 = wordString.ToLower().ToCharArray();
-      char[] charArray2 = charArray1;
-      Array.Reverse(charArray1);
-      return (charArray1 == charArray2);
+      string str1 = word;
+      char[] ch1 = str1.ToLower().ToCharArray();
+      Array.Reverse(ch1);
+      return new string(ch1) == str1; 
     }
   }
 }
-
-// string orderedStr1 = new string(ch1);  //create new string with the alphabetical order of chars
-      // string orderedStr2 = new string(ch2);
-
-      // if (orderedStr1 == orderedStr2)
-      // {
-      //   return true; //they are anagrams
-      // }
-      // else
-      // {
-      //   return false; //not anagrams
-      // }
