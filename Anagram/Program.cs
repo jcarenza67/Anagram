@@ -9,16 +9,24 @@ namespace Anagram
   {
     static void Main(string[] args)
     {
-      Console.WriteLine("Welcome to the Anagram Checker console App!");
+      Console.WriteLine("Welcome to the Anagram/Palindrome Checker console App!");
       Console.WriteLine("Enter a word:");
       string mainWord = Console.ReadLine(); //ex: "least"
-
+      AnagramClass checker = new AnagramClass();
+      
+      if (checker.CheckPalindrome(mainWord))
+      {
+        Console.WriteLine($"{mainWord} is a palindrome!");
+      }
+      else
+      {
+        Console.WriteLine($"{mainWord} is not a palindrome.");
+      }
+      
       Console.WriteLine("Enter a list of words to check if any are anagrams of the first word you entered. (separate words with a single space)");
       string wordsInput = Console.ReadLine(); //ex "stale tesla slate stale steal tales teals"
 
       string[] words = wordsInput.Split(" ");
-
-      AnagramClass checker = new AnagramClass();
 
       List<string> anagrams = checker.FindAnagram(mainWord, words);
       // Console.WriteLine(anagrams);

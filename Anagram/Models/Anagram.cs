@@ -30,6 +30,15 @@ namespace Anagram.Models
       }
       return anagramList;
     }
+
+    public bool CheckPalindrome(string word)
+    {
+      string wordString = word;
+      char[] charArray1 = wordString.ToLower().ToCharArray();
+      char[] charArray2 = charArray1;
+      Array.Reverse(charArray1);
+      return (charArray1 == charArray2);
+    }
   }
 }
 
